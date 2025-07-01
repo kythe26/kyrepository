@@ -1,0 +1,22 @@
+{
+  "name": "kyrepository",
+  "version": "1.0.0",
+  "description": "Playwright Basics Training",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kythe26/kyrepository.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kythe26/kyrepository/issues"
+  },
+  "homepage": "https://github.com/kythe26/kyrepository#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.53.2",
+    "@types/node": "^24.0.8"
+  }
+}
