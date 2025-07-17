@@ -6,7 +6,8 @@
   "scripts": {
     "login-test": "npx playwright test tests/features/login.spec.js --project chromium",
     "registration-test": "npx playwright test tests/features/registration.spec.js --project chromium",
-    "loginCI-test": "npx playwright test tests/features/loginCI.spec.js --project chromium --trace on"
+    "loginCI-test": "npx playwright test tests/features/loginCI.spec.js --project chromium --trace on",
+    "shopping-test": "npx playwright test tests/features/shopping.spec.js --project chromium"
   },
   
   "repository": {

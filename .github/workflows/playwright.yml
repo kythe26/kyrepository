@@ -19,6 +19,8 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npm run loginCI-test
+      name: Run Playwright tests
+      run: npm run shopping-test
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
