@@ -25,6 +25,7 @@ test('verify user is able to register successfully', async ({ page }) => {
   await expect(page.getByRole("button", { name: 'Register' })).not.toHaveText("Sign In");
   await page.getByRole('button', { name: 'Register' }).click();  
   await expect(page.getByRole('heading', { name: 'Welcome ' })).toBeVisible();
+   //Custom expect message
   await expect(page.getByText("Your account was created"),'Expect the page to display "Your account was created"').toBeVisible(); 
  
   // verify URL

@@ -7,9 +7,9 @@
     "login-test": "npx playwright test tests/features/login.spec.js --project chromium",
     "registration-test": "npx playwright test tests/features/registration.spec.js --project chromium",
     "loginCI-test": "npx playwright test tests/features/loginCI.spec.js --project chromium --trace on",
-    "shopping-test": "npx playwright test tests/features/shopping.spec.js --project chromium"
+    "shopping-test": "npx playwright test tests/features/shopping.spec.js --project chromium",
+    "auth-setup": "npx playwright test tests/auth.setup.ts --project setup"
   },
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kythe26/kyrepository.git"
@@ -21,8 +21,11 @@
     "url": "https://github.com/kythe26/kyrepository/issues"
   },
   "homepage": "https://github.com/kythe26/kyrepository#readme",
-  "devDependencies": {  
+  "devDependencies": {
     "@playwright/test": "^1.53.2",
     "@types/node": "^24.0.8"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.0"
   }
 }
