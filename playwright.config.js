@@ -9,7 +9,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 
 dotenv.config({ path: path.resolve(__dirname, '.env') });
-export const STORAGE_STATE = path.join(__dirname,"./.auth/user.jason");
+export const STORAGE_STATE = path.join(__dirname, "./.auth/user.json");
 //dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 /**  
@@ -31,7 +31,7 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://localhost:3000',
-
+    baseURL: "https://www.saucedemo.com",
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
@@ -51,7 +51,7 @@ export default defineConfig({
         launchOptions: {
           args: ["--start-maximized"],
         },
-      }
+      },
     },
     // {
     //   name: 'chromium',

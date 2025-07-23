@@ -8,7 +8,8 @@
     "registration-test": "npx playwright test tests/features/registration.spec.js --project chromium",
     "loginCI-test": "npx playwright test tests/features/loginCI.spec.js --project chromium --trace on",
     "shopping-test": "npx playwright test tests/features/shopping.spec.js --project chromium",
-    "auth-setup": "npx playwright test tests/auth.setup.ts --project setup"
+    "auth-setup": "npx playwright test auth.setup.ts --project setup",
+    "e2e-setup": "npx playwright test e2e.spec.ts --project e2e"
   },
   "repository": {
     "type": "git",
