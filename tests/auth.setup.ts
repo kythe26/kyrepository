@@ -1,21 +1,14 @@
-import { expect, test as setup } from '@playwright/test';
+//import { expect, test as setup } from '@playwright/test';
+import { test as setup } from '../shared/base';
 import { STORAGE_STATE } from '../playwright.config';
-import { LoginPage } from '../pages/LoginPage'; //importing POM
+//import { LoginPage } from '../pages/LoginPage'; //importing POM
 
 
-setup('Do Login', async ({ page }) => {
-   const loginPage = new LoginPage(page); //POM
+setup('Do Login', async ({ loginPage, page }) => {
+   await loginPage.navigateTo()
+   await loginPage.login(process.env.SAUCE_USERNAME! || 'standard_user', process.env.SAUCE_PASSWORD || 'secret_sauce');
+   //await loginPage.verifyLoginSuccess();
+   await page.context().storageState({path: STORAGE_STATE});
 
-   await loginPage.navigateTo() //POM
-   await loginPage.login(process.env.SAUCE_USERNAME!,process.env.SAUCE_PASSWORD!) //POM
-
-    //comment out for POM
-    // await page.goto('/');
-    // await page.locator('[data-test="username"]').fill(process.env.SAUCE_USERNAME!);
-    // await page.locator('[data-test="password"]').fill(process.env.SAUCE_PASSWORD!); 
-    // await page.locator('[data-test="login-button"]').click();
-
-    await expect(page.getByText('Swag Labs')).toBeVisible() 
-    await page.context().storageState({path:STORAGE_STATE});
     
 });   
