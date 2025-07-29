@@ -1,6 +1,7 @@
 import { expect, Locator, Page } from '@playwright/test';
 
 export class LoginPage {
+   
     //Locators
     //NTS declare
     public readonly usernameInput: Locator;
@@ -31,4 +32,28 @@ async login(username: string, password: string): Promise<void>{
     await this.passwordInput.fill(password);
     await this.loginButton.click();
 }
+
+ /**
+   * Verifies that the login was successful by checking the header.
+   */
+  async verifyLoginSuccess(): Promise<void> {
+    await this.page.addStyleTag({
+      content: `
+        *, *::before, *::after {
+          transition: none !important;
+          animation: none !important;
+        }
+      `
+    });
+    await expect(this.swagLabsHeader).toBeVisible();
+    await expect(this.swagLabsHeader).toHaveText('Swag Labs');
+  }
+
+    async verifyLoginError(expectedErrorMessage: string): Promise<void> {
+    await expect(this.errorMessage).toBeVisible();
+    await expect(this.errorMessage).toHaveText(expectedErrorMessage);
+  }
+
+
 }
+

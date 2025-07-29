@@ -1,9 +1,16 @@
 name: Playwright Tests
-on:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
+
+on: workflow_dispatch
+# on:
+#   push:
+#     branches: [ main, master ]
+#   pull_request:
+#     branches: [ main, master ]
+
+env:
+    SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+    SAUCE_PASSWORD: ${{ secrets.SAUCE_PASSWORD }}
+
 jobs:
   test:
     timeout-minutes: 60
